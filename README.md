@@ -37,18 +37,18 @@ TBD
 ### 레이아웃
 
 - 헤더
-- 메인페이지
-- 네비바
-  - 식물 검색
-  - 식물 찾기
-  - 매거진
+- 메인페이지 (/)
+- 네비바 
+  - 식물 검색 (/#search)
+  - 식물 찾기 (/#filter)
+  - 매거진 (/#magazin, /story/detail/{})
 
 
-![메인페이지](/docs/layout.jpeg) / 
-![식물 검색](/docs/search.jpeg)  /#search
-![식물 찾기](/docs/filter.png)  /#filter
-![매거진](/docs/magazin.png)  /#magazin
-![메거진 디테일](/docs/magazindetail.png) /story/detail/{}
+![메인페이지](/docs/layout.jpeg)
+![식물 검색](/docs/search.png)  
+![식물 찾기](/docs/filter.png) 
+![매거진](/docs/magazin.png) 
+![메거진 디테일](/docs/magazindetail.png)
 
 ## 기능
 
