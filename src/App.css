@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/*폰트*/
+@font-face {
+  font-family: "NotoSans-Bold";
+  font-weight: 50;
+  src: url("./fonts/NotoSansKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans-Regular";
+  font-weight: 50;
+  src: url("./fonts/NotoSansKR-Regular.otf") format("truetype");
+}
+
