@@ -12,12 +12,19 @@ const menu = [
 
 export default function Nav() {
   return (
-    <div className = "">
-      <ul>
+<div className="">
+      <ul className="m-0 p-0">
         {menu.map((item) => (
-          <li key={item.name}>{item.name}</li>
+          <li key={item.name} className="flex items-center my-3 mx-0 cursor-pointer">
+              <a>
+                  <span className="h-1 w-3.5 z-10 bg-searchGreen block" >
+
+                  </span>
+              </a>
+              <div className="left-20 ml-4 text-xs">{item.name}</div>
+          </li>
         ))}
       </ul>
-    </div>
+      </div>
   );
 }

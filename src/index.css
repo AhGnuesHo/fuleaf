@@ -4,8 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html{
+  overflow : hidden;
+}
 body {
+  width : 100%;
+  height : 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -17,4 +21,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#blinker {
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+  border: solid 0.17857vw #00b564;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0 0.35714vw;
+  -webkit-transform: translateY(30%);
+  transform: translateY(30%);
+  display: inline-block;
+  background: #00b564;
+  border-radius: 6px;
+  height: 4.7619vw;
+  width: 0;
 }
