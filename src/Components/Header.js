@@ -4,7 +4,7 @@ import { MenuIcon } from "@heroicons/react/outline";
 
 export default function Header() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-5 lg:px-20 md:justify-start md:space-x-5 ">
           <div className="flex">

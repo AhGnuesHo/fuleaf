@@ -12,8 +12,8 @@ const menu = [
 
 export default function Nav() {
   return (
-<div className="">
-      <ul className="m-0 p-0">
+<div className="h-screen w-[200px] flex items-center -mt-[84.5px]">
+      <ul className="pl-[100px]">
         {menu.map((item) => (
           <li key={item.name} className="flex items-center my-3 mx-0 cursor-pointer">
               <a>
