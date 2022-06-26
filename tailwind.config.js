@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         "searchGreen": "#00b564",
+        "filterColor" : "#666666"
       }
     },
     plugins: [],
