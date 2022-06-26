@@ -1,14 +1,30 @@
 import Search from "./Search";
 import Filter from "./Filter";
-export default function Content() {
-  return (
-    <div className="flex-1 h-screen flex flex-row row-nowrap">
-      <div className="font-bold text-[5.59524vw] h-full ml-[160px] mt-[160px]">
-        <p className="text-sm text-searchGreen font-Montserrat">plant search</p>
+import { useRef, useEffect } from "react";
 
-        {/* <Search /> */}
-        <Filter/>
+export default function Content() {
+  // const outerDivRef = useRef();
+  // useEffect(() => {
+  //   const wheelHandler = (e) => {
+  //     e.preventDefault();
+  //     // 스크롤 이벤트
+  //   };
+  //   const outerDivRefCurrent = outerDivRef.current;
+  //   outerDivRefCurrent.addEventHandler("wheel", wheelHandler);
+  //   return () => {
+  //     outerDivRefCurrent.remonveEventHandler("wheel", wheelHandler);
+  //   };
+  // }, []);
+
+  return (
+    <div 
+    // ref={outerDivRef} 
+    className="flex-1 h-screen flex flex-row row-nowrap">
+      <div className = "block f-screen">
+      <Search />
+      <Filter/>
       </div>
+      
     </div>
   );
 }
