@@ -1,36 +1,40 @@
 import { useTypewriter } from "react-simple-typewriter";
 import { useState, useRef } from "react";
+
+const placeholder = [
+  "스투키", "몬스테라", "    "
+]
 export default function Search() {
-
-  const [width, setWidth] = useState(300);
+  
   const typer = useRef();
-
-  const changeHandler = () => {
-    setWidth(typer.current.value.length);
-    typer.current.style.width=`${width*100}px`;
-    // setWidth(e.target.value.length);
-    console.log(typer.current.value);
-  };
-
+  
   const TypewriterHook = () => {
+    const [isInputBorder, setIsInputBorder] =  useState(false);
     const { text } = useTypewriter({
-      words: ["몬스테라", "스투키", ""],
-      typeSpeed: 90,
+      words: placeholder,
+      typeSpeed: 160,
       loop: 1,
       deleteSpeed: 50,
-      delaySpeed: 1500
+      delaySpeed: 1500,
+      onType : () => {
+        const lenght = typer.current.placeholder.length;       
+        typer.current.style.width=`${(lenght*7)}%`;
+      },
+      onLoopDone : () => {
+        typer.current.style.width=`24%`;
+        typer.current.focus();
+        setIsInputBorder(true);
+      }  
     });
 
     return (
       <input
-        className="inline-block border-b-4 border-b-black bold caret-searchGreen"
-        style={{
-          width: `100px`,
-        }}
-        value={text}
-        onChange={changeHandler}
+        className= 
+        {isInputBorder ? "inline-block caret-searchGreen border-b-4 border-b-black bold" : "inline-block caret-searchGreen "}
+        placeholder={text}
         ref = {typer}
-      />
+        />
+      
     );
   };
 
