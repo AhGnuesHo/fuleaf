@@ -13,7 +13,8 @@ const menu = [
 export default function Nav() {
   return (
     <div className="h-screen w-[200px] flex items-center -mt-[84.5px]">
-      <ul className="pl-[100px]">
+      {/* padding left 말고 왼쪽 정렬로 하고 싶은데 어떻게.. */}
+      <ul className="pl-[80px]">
         {menu.map((item) => (
           <li
             key={item.name}

@@ -1,20 +1,20 @@
 import Header from "./Components/Header";
-import Content from "./Components/Content";
-import Nav from "./Components/Nav";
+import Main from "./Components/Main";
+import PageFilter from "./Pages/PageFilter"
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 
 function App() {
-
-  
   return (
-    <>
-      <Header></Header>
-      <div className = "relative flex row-nowrap h-screen">
-
-      <Nav></Nav>
-      <Content></Content>
-      </div>
-    </>
-    
+    <div className="App">
+      <BrowserRouter>
+        <Header></Header>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path ="/plants" element={<PageFilter/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

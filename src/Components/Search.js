@@ -1,6 +1,7 @@
 import { useTypewriter } from "react-simple-typewriter";
 import { useState, useRef } from "react";
 
+
 const placeholder = [
   "스투키", "몬스테라", "    "
 ]
@@ -39,7 +40,7 @@ export default function Search() {
   };
 
   return (
-    <>
+   <>
       <div className="font-bold text-[5.59524vw] h-screen ml-[160px] mt-[160px]">
         <p className="text-sm text-searchGreen font-Montserrat">plant search</p>
 
