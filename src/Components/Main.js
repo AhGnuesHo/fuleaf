@@ -5,14 +5,12 @@ import { useRef, useEffect } from "react";
 
 export default function Main() {
   return (
-    <div className="flex-1 h-screen flex flex-row row-nowrap">
-      <div className="block f-screen">
-        <div className="relative flex row-nowrap h-screen">
-          <Nav/>
-          <Search />
-          <Filter />
-        </div>
-       
+    <div className="h-screen">
+      <Nav />
+
+      <div className="ml-48  h-screen flex flex-col">
+        <Search />
+        <Filter />
       </div>
     </div>
   );

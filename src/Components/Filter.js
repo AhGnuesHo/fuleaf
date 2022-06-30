@@ -3,9 +3,10 @@ import filterList from '../Data/filterList';
 export default function Filter() {
   return (
 
+
     <>
-      <div className="font-bold text-[5.59524vw]">
-        <span className="block"> 어떤 식물을 찾고 있나요?</span>
+    <div className="font-bold text-[5.59524vw] h-screen absolute top-2/4" >
+    <span className="block"> 어떤 식물을 찾고 있나요?</span>
         <ul className="p-0 w-[846px] cursor-pointer">
             {filterList.map((item) => (
                 <li key = {item.name} 
@@ -14,7 +15,8 @@ export default function Filter() {
                 </li>
             ))}
         </ul>
-      </div>
-    </>
+    </div>
+  </>
+
   );
 }
