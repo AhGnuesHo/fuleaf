@@ -1,29 +1,13 @@
 import { useRef, useState } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import links from '../Data/links.json';
 
 export default function Header() {
 
   const nowHref = useRef(window.location.pathname);
 
-  const links = [
-    {
-      href: "/",
-      text: "홈",
-      defaultStyle: "",
-    },
-    {
-      href: "/plants",
-      text: "식물필터",
-    },
-    ,
-    {
-      href: "/magazine",
-      text: "매거진",
-    },
-  ];
-
   return (
-    <div className="bg-white">
+    <div className="bg-white sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto ">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-5 lg:px-20 md:justify-start md:space-x-5 ">
           <div className="flex">

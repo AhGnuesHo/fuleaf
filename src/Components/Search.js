@@ -31,8 +31,8 @@ export default function Search() {
         <input
           className={
             isInputBorder
-              ? " inline-block caret-searchGreen border-b-4 h-4/5 border-b-black bold typer "
-              : "inline-block caret-searchGreen typer"
+              ? " inline caret-searchGreen border-b-4 h-4/5 border-b-black bold typer "
+              : "inline caret-searchGreen typer"
           }
           placeholder={text}
           ref={typer}
@@ -44,19 +44,20 @@ export default function Search() {
 
   return (
     <>
-      <div className="font-bold text-[5.59524vw] absolute top-2/4 left-[31.25vw] mt-[-150px]" >
-        <p className="text-sm text-searchGreen font-Montserrat">plant search</p>
+      <div className="font-black text-[5.59524vw] m-auto inline" >
+        <p className="text-sm text-searchGreen font-Montserrat inline">plant search</p>
 
-        <div className="font-bold flex">
-          <span className="flex">
+        <div className="lnline" >
+          <span >
             나는
             <TypewriterHook />를
           </span>
-          <span></span>
+
         </div>
-        <p>잘 키우는 방법이</p>
+        <p className="inline">잘 키우는 방법이</p>
         <p>궁금하다.</p>
       </div>
     </>
   );
 }
+// absolute left-[31.25vw] mt-[-150px]"

@@ -1,0 +1,14 @@
+[
+    {
+      "name": "식물검색",
+      "href": "/"
+    },
+    {
+      "name": "식물필터",
+      "href": "/filter"
+    },
+    {
+      "name": "매거진",
+      "href": "/magazine"
+    }
+  ]

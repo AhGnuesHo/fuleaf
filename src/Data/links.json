@@ -1,0 +1,17 @@
+[
+    {
+      "href": "/",
+      "text": "홈",
+      "defaultStyle": ""
+    },
+    {
+      "href": "/plants",
+      "text": "식물필터"
+    },
+    
+    {
+      "href": "/magazine",
+      "text": "매거진"
+    }
+  ]
+
