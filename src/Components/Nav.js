@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import { HashLink } from "react-router-hash-link";
 import links from "../Data/links.json";
 import menu from "../Data/menu.json";
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 
 export default function Nav() {
   const nowHref = useRef(window.location.pathname);
@@ -15,11 +15,12 @@ export default function Nav() {
               key={item.name}
               className="flex items-center my-3 mx-0 cursor-pointer"
             >
+              
               <span className="h-[3px] w-[26px] z-10 bg-searchGreen block"></span>
-
               <div className="left-20 ml-4 font-black text-[0.83333vw] text-searchGreen">
                 {item.name}
               </div>
+          
             </li>
           ) : (
             <li

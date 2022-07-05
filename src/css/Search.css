@@ -46,3 +46,33 @@
     border-radius: 0;
     -webkit-appearance: none;
 }
+
+.move-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: moving 3.5s infinite;
+  animation: moving 3.5s infinite;
+}
+
+
+@keyframes moving {
+  0% {
+    bottom: 40px;
+  }
+  25% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 40px;
+  }
+  75% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 40px;
+  }
+}

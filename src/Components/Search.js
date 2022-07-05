@@ -1,6 +1,7 @@
 import { useTypewriter } from "react-simple-typewriter";
 import { useState, useRef } from "react";
-import "../../src/css/Cursor.css";
+import "../../src/css/Search.css";
+import arrow from "../imges/move-arrow.png";
 
 const placeholder = [" 스투키", " 몬스테라", ""];
 export default function Search() {
@@ -44,19 +45,21 @@ export default function Search() {
 
   return (
     <>
-      <div className="font-black text-[5.59524vw] m-auto inline" >
-        <p className="text-sm text-searchGreen font-Montserrat inline">plant search</p>
+      <div className="font-black text-[5.59524vw] m-auto inline">
+        <p className="text-sm text-searchGreen font-Montserrat inline">
+          plant search
+        </p>
 
-        <div className="lnline" >
-          <span >
+        <div className="lnline">
+          <span>
             나는
             <TypewriterHook />를
           </span>
-
         </div>
         <p className="inline">잘 키우는 방법이</p>
         <p>궁금하다.</p>
       </div>
+      <img src={arrow} className="move-arrow" />
     </>
   );
 }
