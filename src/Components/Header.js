@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import links from '../Data/links.json';
+import links from "../Data/links.json";
 
 export default function Header() {
-
   const nowHref = useRef(window.location.pathname);
 
   return (
@@ -19,7 +18,7 @@ export default function Header() {
               />
             </Link>
           </div>
-         
+{/*  리랜더링해야 메뉴색 바뀜 */}
           <div className="hidden md:flex space-x-10">
             {links.map((link) =>
               nowHref.current === link.href ? (

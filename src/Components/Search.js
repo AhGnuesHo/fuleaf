@@ -45,8 +45,9 @@ export default function Search() {
 
   return (
     <>
-      <div className="font-black text-[5.59524vw] m-auto inline">
-        <p className="text-sm text-searchGreen font-Montserrat inline">
+      <div className="font-black text-[5.59524vw] " >
+        <p className="text-sm text-searchGreen font-Montserrat inline"
+        >
           plant search
         </p>
 
@@ -58,9 +59,8 @@ export default function Search() {
         </div>
         <p className="inline">잘 키우는 방법이</p>
         <p>궁금하다.</p>
-      </div>
       <img src={arrow} className="move-arrow" />
+      </div>
     </>
   );
 }
-// absolute left-[31.25vw] mt-[-150px]"

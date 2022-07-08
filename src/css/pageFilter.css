@@ -1,0 +1,13 @@
+.active {
+ color : #ccc;
+}
+
+.plants__list-item {
+    width:calc(20% - 48px)
+}
+
+.plants__list-item:not(:nth-child(5n)) {
+    margin-right:60px
+}
+
+
