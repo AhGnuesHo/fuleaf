@@ -1,21 +1,30 @@
 import filterList from "../Data/filterList";
 import searchIcon from "../imges/search@3x.png";
-import dummy from "../Data/Data.json";
+import data from "../Data/Data.json";
 import { useState } from "react";
 import "../../src/css/pageFilter.css";
 
 export default function PageFilter() {
 
-  const [countData, setCountData] = useState(dummy.length);
   const [sort, setSort] = useState(true);
+  const [search, setSearch] = useState("");
+  const [dummy, setDummy] = useState(data);
+  const [countData, setCountData] = useState(dummy.length);
 
   const changeColor = () => {
     console.log(sort)
     setSort(!sort);
   }
-  
-  return (
-    <>
+
+  const handleSubmit = (e) => {
+  e.preventDefault();
+  const newDummy = dummy.filter((item) => 
+      item.name.includes(search)
+    )
+    setDummy(newDummy);
+  }
+
+  return (    <>
       <div className="h-screen ml-[160px] mt-[42px] w-[79%] ">
         <div className="font-extrabold text-[32px] md:text-[46px]  mb-[36px]">
           <h1 className="flex">어떤 종류의</h1>
@@ -38,19 +47,23 @@ export default function PageFilter() {
               src={searchIcon}
               className="absolute top-[23px] w-[26px] h-[26px]"
             />
-            <form className="block">
+            <form className="block" onSubmit={e => handleSubmit(e)}>
               <input
                 className="w-full mb-[18px] text-[20px] py-[17px] px-[30px] leading-[1.85] tracking-[-1px] border-b border-solid border-black"
                 id="search__input"
                 type="text"
                 placeholder="식물 이름을 검색해 주세요."
                 name="term"
+                value = {search}
+                onChange ={(e)=>{
+                  setSearch(e.target.value);
+                }}
               ></input>
             </form>
           </div>
         </div>
         <div className="w-full flex justify-between text-[14px] font-bold">
-          <div>식물데이터 {countData} 종</div>
+          <div>식물데이터 {dummy.length} 종</div>
           <div className="flex">
             <a className={`${!sort ? "" : "active"} `} onClick={changeColor}>
               인기순

@@ -1,6 +1,7 @@
 import Search from "./Search";
 import Filter from "./Filter";
 import Nav from "./Nav";
+
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useRef, useEffect } from "react";
 import AOS from "aos";
@@ -18,14 +19,9 @@ import SwiperCore, { Navigation, Pagination, Mousewheel } from "swiper";
 export default function Main() {
   
   useEffect(() => {
-    AOS.init(
-      {
-        once: true,
-        duration: 1000,
-      },
-      100
-    );
-  })
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <div className="h-screen">
@@ -42,14 +38,16 @@ export default function Main() {
         hashNavigation={{
           watchState: true,
         }}
-        onSlideChange={() => {console.log(234)}}
+        onSlideChange={() => { AOS.init(); }}
       >
-        <SwiperSlide data-hash =""><Search /></SwiperSlide>
-        <SwiperSlide data-hash ="#filter"> <Filter /></SwiperSlide>
+        
+        <SwiperSlide  data-hash =""><Search/></SwiperSlide>
+        <SwiperSlide  data-hash ="#filter"> <Filter /></SwiperSlide>
+   
       </Swiper>
     
 
-        
+     
       </div>
     </div>
   );
