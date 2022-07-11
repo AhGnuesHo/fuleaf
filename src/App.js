@@ -8,7 +8,7 @@ function App() {
   return (
 
       <BrowserRouter>
-      <div className="h-[100%] pb-[1200px]">
+      <div className="h-[100%]">
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />

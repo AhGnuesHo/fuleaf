@@ -36,7 +36,7 @@ export default function PageFilter() {
 
   return (
     <>
-      <div className="h-screen ml-[160px] mt-[42px] w-[79%] ">
+      <div className="h-[100%] ml-[160px] mt-[42px] w-[79%] ">
         <div className="font-extrabold text-[32px] md:text-[46px]  mb-[36px]">
           <h1 className="flex">어떤 종류의</h1>
           <h1 className="flex">식물을 찾고있나요?</h1>
@@ -85,32 +85,40 @@ export default function PageFilter() {
             </a>
           </div>
         </div>
-        <div className="block ">
-          <div className="mt-[40px]">
+        <div className="block">
+          <div className="mt-[40px] h-[auto] overflow-hidden">
             <div className="flex flex-wrap">
-              {dummy && dummy.length > 0 
-              ? dummy.slice(0, 25 * pageNum).map((item, index) =>
-              
-              (
-                <div className="plants__list-item mr-[0px]" key={item.id}>
-                  <a herf={item.href}>
-                    <img
-                      className="h-[170px] w-[170px] rounded-[10px] bg-cover bg-center mb-[12px]"
-                      src={item.image}
-                    ></img>
-                    <h3 className="text-[16px] mb-[60px] font-bold">
-                      {item.name}
-                    </h3>
-                  </a>
-                </div>
-              )) 
-              : <div className="m-auto">검색결과가 없습니다. </div> }
-             
+              {dummy && dummy.length > 0 ? (
+                dummy.slice(0, 25 * pageNum).map((item, index) => (
+                  <div className="plants__list-item mr-[0px]" key={item.id}>
+                    <a herf={item.href}>
+                      <img
+                        className="h-[170px] w-[170px] rounded-[10px] bg-cover bg-center mb-[12px]"
+                        src={item.image}
+                      ></img>
+                      <h3 className="text-[16px] mb-[60px] font-bold">
+                        {item.name}
+                      </h3>
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <div className="m-auto">검색결과가 없습니다. </div>
+              )}
             </div>
-            <div className = "mt-[20px] flex text-center justify-center ">
-              <button className = "block mt-[40px] mb-[120px] w-full rounded-[30px] h-[60px] tracking-[-0.48px] text-[16px] font-bold bg-[#f5f5f5]"> 
-                <span className="relative top-[-2px] "> 더보기 </span>
-                <img className = "inline w-[24px] relative top-[3px] align-baseline" src="https://huga.s3.ap-northeast-2.amazonaws.com/v3.1/images/plants/more_btn_ico%403x.png"></img>
+            <div className="mt-[20px] flex text-center justify-center ">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPageNum(pageNum + 1);
+                }}
+                className="block mt-[40px] mb-[120px] w-full rounded-[30px] h-[60px] tracking-[-0.48px] text-[16px] font-bold bg-[#f5f5f5]"
+              >
+                <span className="relative top-[-2px]"> 더보기 </span>
+                <img
+                  className="inline w-[24px] relative top-[3px] align-baseline"
+                  src="https://huga.s3.ap-northeast-2.amazonaws.com/v3.1/images/plants/more_btn_ico%403x.png"
+                ></img>
               </button>
             </div>
           </div>
