@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import links from "../Data/links.json";
 
 export default function Header() {

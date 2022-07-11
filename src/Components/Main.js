@@ -2,8 +2,7 @@ import Search from "./Search";
 import Filter from "./Filter";
 import Nav from "./Nav";
 
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
