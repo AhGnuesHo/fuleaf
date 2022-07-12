@@ -11,18 +11,6 @@ export default function PageFilter() {
   const [count, setCount] = useState(25);
   const [pageNum, setPageNum] = useState(1);
 
-  const dataList = () => {
-    let list = [];
-    for (let i = 0; i < { count }; i++) {
-      list.push({
-        href: dummy[i].href,
-        image: dummy[i].image,
-        name: dummy[i].name,
-      });
-    }
-    return list;
-  };
-
   const changeColor = () => {
     console.log(sort);
     setSort(!sort);
@@ -30,7 +18,7 @@ export default function PageFilter() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newDummy = dummy.filter((item, index) => item.name.includes(search));
+    const newDummy = data.filter((item, index) => item.name.includes(search));
     setDummy(newDummy);
   };
 
@@ -103,9 +91,14 @@ export default function PageFilter() {
                   </div>
                 ))
               ) : (
-                <div className="m-auto">검색결과가 없습니다. </div>
+                <div className="mt-[97px] mb-[195px] mx-auto text-center text-[#999]">
+                  <h1 className='text-[46px] mb-[12px] tracking-[-2.3px] font-black align-middle'>잘못된 검색어입니다 ㅠㅠ</h1>
+                  <h2 className='text-[20px] tracking-[-1px] align-middle'>식물이름을 검색해주세요.</h2> 
+                </div>
               )}
             </div>
+
+            {dummy.length > 25 && 
             <div className="mt-[20px] flex text-center justify-center ">
               <button
                 onClick={(e) => {
@@ -121,6 +114,7 @@ export default function PageFilter() {
                 ></img>
               </button>
             </div>
+}
           </div>
         </div>
       </div>

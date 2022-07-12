@@ -1,19 +1,22 @@
 import Search from "./Search";
 import Filter from "./Filter";
 import Nav from "./Nav";
+import menu from "../Data/menu.json";
 
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import "../css/Main.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import SwiperCore, { Navigation, Pagination, Mousewheel } from "swiper";
 
+import { Navigation, Pagination, Mousewheel } from "swiper";
+
+<div class = "menu">' + (menu[index].name) + "</div>
 
 export default function Main() {
   
@@ -22,14 +25,28 @@ export default function Main() {
     AOS.refresh();
   }, []);
 
-  return (
-    <div className="h-screen">
-      <Nav />
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return (
+      '<div class="menuWrap"><div class="' + className + '"></div><div class="menu">' + (menu[index].name) + "</div> </div>" );
+    },
+  };
 
-      <div className="ml-48 h-full flex flex-col justify-evenly ">
+  
+
+  return (
+
+    
+    <div className="h-screen">
+     
+
+      <div className="h-full flex flex-col justify-evenly ">
       
       <Swiper
+        spaceBetween={90}
         direction={"vertical"}
+        pagination={pagination}
         slidesPerView={1}
         mousewheel={true}
         modules={[Mousewheel, Pagination, Navigation]}

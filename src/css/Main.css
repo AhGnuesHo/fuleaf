@@ -1,0 +1,39 @@
+.mySwiper {
+  width : 100%
+}
+
+.swiper-pagination-bullet {
+  height : 3px !important;
+  width : 14px !important;
+  border-radius : 0 !important;
+  --tw-bg-opacity: 1  !important;
+  background-color: rgb(180 180 180 / var(--tw-bg-opacity)) !important;
+
+}
+.swiper-pagination-bullet-active {
+  width : 26px !important;
+  background-color: rgb(0 181 100 / var(--tw-bg-opacity)) !important;
+}
+
+
+.swiper-pagination-vertical {
+  left : 100px !important;
+  margin-top: -50px !important;
+}
+
+.menuWrap {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-top: 0.75rem/* 12px */;
+  margin-bottom: 0.75rem/* 12px */;
+}
+
+.menu {
+  color: rgb(203 213 225);
+  margin-left : 40px;
+  font-weight: 900;
+  position: absolute;
+  font-size: 0.83333vw;
+}
+

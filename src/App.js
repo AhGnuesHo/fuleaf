@@ -14,8 +14,8 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/plants" element={<PageFilter />} />
         </Routes>
-        </div>
         <Footer />
+        </div>
       </BrowserRouter>
 
   );

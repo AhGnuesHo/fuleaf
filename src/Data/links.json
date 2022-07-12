@@ -2,16 +2,18 @@
     {
       "href": "/",
       "text": "홈",
-      "defaultStyle": ""
+      "defaultStyle": "black"
     },
     {
       "href": "/plants",
-      "text": "식물필터"
+      "text": "식물필터",
+      "defaultStyle": "#999"
     },
     
     {
       "href": "/magazine",
-      "text": "매거진"
+      "text": "매거진",
+      "defaultStyle": "#d4d4d4"
     }
   ]
 

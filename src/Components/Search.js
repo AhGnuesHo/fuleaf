@@ -45,7 +45,7 @@ export default function Search() {
 
   return (
     <>
-      <div className="font-black text-[5.59524vw] " >
+      <div className="ml-[450px] mt-[20px] font-black text-[5.59524vw] " >
         <p className="text-sm text-searchGreen font-Montserrat inline"
         >
           plant search

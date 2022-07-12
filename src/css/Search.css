@@ -52,7 +52,7 @@
   height: 40px;
   position: relative;
   margin-top : 170px;
-  left: 40%;
+  left: 25%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   -webkit-animation: moving 3.5s infinite;
