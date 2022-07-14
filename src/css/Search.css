@@ -27,7 +27,7 @@
 }
 
 .typer {
-  width: 0;
+  width: 100pxdsf;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #999;
@@ -76,4 +76,25 @@
   100% {
     bottom: 40px;
   }
+}
+
+.searchLink{
+    position: relative;
+    border-bottom: solid 4px #000;
+    line-height : 90px; 
+}
+
+.searchLink::after{
+  content: "";
+						position: absolute;
+						top:25px;
+						background: url('../imges/link.png') 50% 50% no-repeat;
+						width:64px;
+						height:64px;
+						background-size: cover;
+            z-index : 100;
+
+}
+.searchLink::visible{
+  display:inline-block; transform:translateX(-110%);
 }

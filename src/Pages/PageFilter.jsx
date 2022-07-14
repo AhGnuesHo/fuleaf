@@ -8,7 +8,6 @@ export default function PageFilter() {
   const [sort, setSort] = useState(true);
   const [search, setSearch] = useState("");
   const [dummy, setDummy] = useState(data);
-  const [count, setCount] = useState(25);
   const [pageNum, setPageNum] = useState(1);
 
   const changeColor = () => {
@@ -18,7 +17,7 @@ export default function PageFilter() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newDummy = data.filter((item, index) => item.name.includes(search));
+    const newDummy = data.filter((item) => item.name.includes(search));
     setDummy(newDummy);
   };
 
