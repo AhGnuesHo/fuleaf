@@ -1,7 +1,7 @@
 import Search from "./Search";
 import Filter from "./Filter";
 import Magazin from "./Magazin";
-import menu from "../Data/menu.json";
+import menu from "../Data/links.json";
 
 import { useEffect } from "react";
 import AOS from "aos";
@@ -25,10 +25,11 @@ export default function Main() {
     clickable: true,
     renderBullet: function (index, className) {
       return (
+        
         '<div class="menuWrap"><div class="' +
         className +
         '"></div><div class="menu">' +
-        menu[index].name +
+        menu.nav[index].text +
         "</div> </div>"
       );
     },

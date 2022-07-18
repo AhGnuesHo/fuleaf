@@ -1,19 +1,42 @@
-[
+{
+  "header": [
     {
       "href": "/",
       "text": "홈",
-      "defaultStyle": "black"
+      "defaultStyle": "black",
+      "header": true
     },
     {
       "href": "/plants",
       "text": "식물필터",
-      "defaultStyle": "#999"
+      "defaultStyle": "#999",
+      "header": true
     },
-    
+    {
+      "href": "/curation",
+      "text": "식물 큐레이션",
+      "defaultStyle": "#d4d4d4",
+      "header": true
+    },
+    {
+      "href": "/store",
+      "text": "플립 스토어",
+      "defaultStyle": "#d4d4d4",
+      "header": true
+    }
+  ],
+  "nav": [
+    {
+      "href": "/",
+      "text": "식물찾기"
+    },
+    {
+      "href": "/filter",
+      "text": "식물필터"
+    },
     {
       "href": "/magazine",
-      "text": "매거진",
-      "defaultStyle": "#d4d4d4"
+      "text": "매거진"
     }
   ]
-
+}

@@ -1,4 +1,4 @@
-import filterList from "../Data/filterList";
+import filterList from "../Data/filter.json";
 import searchIcon from "../imges/search@3x.png";
 import data from "../Data/Data.json";
 import { useState } from "react";

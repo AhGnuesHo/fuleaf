@@ -1,4 +1,3 @@
-import magazinArrow from "../imges/magasiz-arrow.png";
 import styled from "styled-components";
 
 export default function Magazin() {
@@ -40,8 +39,8 @@ export default function Magazin() {
 
           <div
             style={{
-              "background-size": "100% auto",
-              "background-image":
+              "backgroundSize": "100% auto",
+              "backgroundImage":
                 " url(https://huga.s3.ap-northeast-2.amazonaws.com/storyThumbnailPics/1607080363651thumbnail_700x700px%20%E2%80%93%206.jpg)",
             }}
             className="h-[28.57143vw] w-[28.57143vw]"

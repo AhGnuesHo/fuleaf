@@ -1,10 +1,8 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import links from "../Data/links.json";
 
 export default function Header() {
-  const nowHref = useRef(window.location.pathname);
-
+  console.log(links);
   return (
     <div className="bg-white sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto ">
@@ -19,7 +17,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex space-x-10 text-[15px] font-black ">
-            {links.map((link) => (
+            {links.header.map((link) => (
               <Link
                 to={link.href}
                 key={link.href}
