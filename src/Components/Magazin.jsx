@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Magazin() {
   return (
@@ -7,9 +8,13 @@ export default function Magazin() {
         <div className="flex align-middle justify-center ">
           <div className="flex-1 w-[50%] mr-[4.7619vw] align-middle">
             <h2>
-              <a className="whitespace-pre-wrap tracking-[-2.3px] leading-[1.43] font-black text-[2.7381vw]">
-                물 주기, <br/>내가 뭘 잘못한 거지?
-              </a>
+              <Link
+                to=""
+                className="whitespace-pre-wrap tracking-[-2.3px] leading-[1.43] font-black text-[2.7381vw]"
+              >
+                물 주기, <br />
+                내가 뭘 잘못한 거지?
+              </Link>
             </h2>
 
             <div>
@@ -39,8 +44,8 @@ export default function Magazin() {
 
           <div
             style={{
-              "backgroundSize": "100% auto",
-              "backgroundImage":
+              backgroundSize: "100% auto",
+              backgroundImage:
                 " url(https://huga.s3.ap-northeast-2.amazonaws.com/storyThumbnailPics/1607080363651thumbnail_700x700px%20%E2%80%93%206.jpg)",
             }}
             className="h-[28.57143vw] w-[28.57143vw]"

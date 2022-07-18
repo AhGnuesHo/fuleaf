@@ -4,7 +4,6 @@ import "../../src/css/Search.css";
 
 import arrow from "../imges/move-arrow.png";
 
-
 const placeholder = [" 스투키", " 몬스테라", ""];
 export default function Search() {
   const typer = useRef();
@@ -40,7 +39,7 @@ export default function Search() {
           placeholder={text}
           ref={typer}
           onFocus={() => {
-            console.log ("T")
+            console.log("T");
             setSearch(true);
           }}
         />
@@ -58,7 +57,7 @@ export default function Search() {
 
         <>
           <div className="lnline">
-            {search ? "": <span> 나는</span> }
+            {search ? "" : <span> 나는</span>}
             <TypewriterHook />를
           </div>
           {search ? (
@@ -74,7 +73,7 @@ export default function Search() {
           )}
         </>
 
-        <img src={arrow} className="move-arrow" />
+        <img src={arrow} className="move-arrow" alt="arrow" />
       </div>
     </>
   );

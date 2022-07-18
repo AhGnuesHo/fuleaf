@@ -51,7 +51,6 @@ export default function Footer() {
             </li>
           </ul>
           <ul className="felx justify-between align-center">
-            
             <div className="flex felx-wrap">
               <li className="text-[13px] mr-[26px] mb-[20px]">
                 <a href="https://fuleafstore.imweb.me/30">입점하기(판매자용)</a>
@@ -70,12 +69,12 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-wrap">
-                <a className = "w-full flex justify-end" href="https://www.instagram.com/fuleaf.me/" target="_blank">
-                </a>
-                  <img
-                    className="block ml-auto w-[17px]"
-                    src={instagram}
-                  />
+              <a
+                className="w-full flex justify-end"
+                href="https://www.instagram.com/fuleaf.me/"
+                target="_blank"
+              ></a>
+              <img className="block ml-auto w-[17px]" src={instagram} />
             </div>
           </ul>
         </div>
