@@ -11,7 +11,6 @@ export default function Search() {
 
   const TypewriterHook = () => {
     const [isInputFocus, setIsInputFocus] = useState(false);
-
     const { text } = useTypewriter({
       words: placeholder,
       typeSpeed: 160,
@@ -39,7 +38,6 @@ export default function Search() {
           placeholder={text}
           ref={typer}
           onFocus={() => {
-            console.log("T");
             setSearch(true);
           }}
         />

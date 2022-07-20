@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import links from "../Data/links.json";
 
 export default function Header() {
-  console.log(links);
   return (
     <div className="bg-white sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto ">

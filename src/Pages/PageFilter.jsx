@@ -20,9 +20,7 @@ export default function PageFilter() {
   const tf = searchParams.get("tf");
 
   console.log(ff);
-
   console.log(sf);
-
   console.log(tf);
 
   const [sort, setSort] = useState(true);
@@ -75,6 +73,7 @@ export default function PageFilter() {
               className="inline-block border-solid border border-filterColor rounded-full text-filterColor text-[16px]
               px-[18px] py-[6px] mb-[8px] mr-[6px]"
               onClick={() => {
+                
                 setThridDetailfilter(item.thirdFilters);
                 setUseSearchParams({ sf: `${item.id}` });
               }}
