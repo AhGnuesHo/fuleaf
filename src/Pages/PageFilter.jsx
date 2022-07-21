@@ -2,36 +2,50 @@ import filterList from "../Data/filter.json";
 import searchIcon from "../imges/search@3x.png";
 import data from "../Data/Data.json";
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../src/css/pageFilter.css";
-import { useLocation } from "react-router";
-import qs from "query-string";
+
+import styled from "styled-components";
 
 export default function PageFilter() {
-  const location = useLocation().search;
-  console.log(location);
-
-  const query = qs.parse(location);
-  console.log(query);
-
-  const [searchParams, setUseSearchParams] = useSearchParams();
-  const ff = searchParams.get("ff");
-  const sf = searchParams.get("sf");
-  const tf = searchParams.get("tf");
-
-  console.log(ff);
-  console.log(sf);
-  console.log(tf);
-
   const [sort, setSort] = useState(true);
   const [search, setSearch] = useState("");
   const [dummy, setDummy] = useState(data);
   const [pageNum, setPageNum] = useState(1);
   const [detailfilter, setDetailfilter] = useState([]);
   const [thirddetailfilter, setThridDetailfilter] = useState([]);
+  const [isClick, setIsClick] = useState([false, false, false, false]);
+  const [isDetailClick, setIsDetailClick] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [isThirdFilter, setIsThirdFilter] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
-  const changeColor = () => {
+  const handleSort = () => {
     setSort(!sort);
+    sort
+      ? setDummy(dummy.sort((a, b) => a.counting - b.counting))
+      : setDummy(dummy.sort((a, b) => a.index - b.index));
   };
 
   const handleSubmit = (e) => {
@@ -40,22 +54,31 @@ export default function PageFilter() {
     setDummy(newDummy);
   };
 
+  const handleFilter = (id) => {
+    setDummy(data.filter((f) => f.filter.first === id));
+  };
+
+  const handleFilterButton = (arr, setArr, index) => {
+    var copyClick = arr.map((i) => (i = false));
+    copyClick[index] = !arr[index];
+    setArr(copyClick);
+  };
+
   function ThirdFilter({ third }) {
     return (
       <>
-        <div className="border-dashed border-[#eaeaea] border mt-[8px] mb-[16px] "></div>
+        <Dash />
         <ul className="flex flex-wrap">
-          {third.map((item) => (
-            <button
+          {third.map((item, i) => (
+            <FilterButton
+              active={isThirdFilter[i]}
               key={item.id}
-              className="inline-block border-solid border border-filterColor rounded-full text-filterColor text-[16px]
-              px-[18px] py-[6px] mb-[8px] mr-[6px]"
               onClick={() => {
-                setUseSearchParams({ tf: `${item.id}` });
+                handleFilterButton(isThirdFilter, setIsThirdFilter, i);
               }}
             >
               {item.name}
-            </button>
+            </FilterButton>
           ))}
         </ul>
       </>
@@ -65,21 +88,19 @@ export default function PageFilter() {
   function DetailFilter({ second }) {
     return (
       <>
-        <div className="border-dashed border-[#eaeaea] border mt-[8px] mb-[16px] "></div>
+        <Dash />
         <ul className="flex flex-wrap">
-          {second.map((item) => (
-            <button
+          {second.map((item, i) => (
+            <FilterButton
+              active={isDetailClick[i]}
               key={item.id}
-              className="inline-block border-solid border border-filterColor rounded-full text-filterColor text-[16px]
-              px-[18px] py-[6px] mb-[8px] mr-[6px]"
               onClick={() => {
-                
                 setThridDetailfilter(item.thirdFilters);
-                setUseSearchParams({ sf: `${item.id}` });
+                handleFilterButton(isDetailClick, setIsDetailClick, i);
               }}
             >
               {item.name}
-            </button>
+            </FilterButton>
           ))}
         </ul>
         {console.log(thirddetailfilter.length)}
@@ -90,22 +111,22 @@ export default function PageFilter() {
     );
   }
 
-  function Button({ filter }) {
+  function FirstFilter({ filter }) {
     return (
       <>
         <ul className="p-0 w-[846px] cursor-pointer">
-          {filter.map((item) => (
-            <button
+          {filter.map((item, i) => (
+            <FilterButton
+              active={isClick[i]}
               key={item.id}
-              className="inline-block border-solid border border-filterColor rounded-full text-filterColor text-[16px]
-          px-[18px] py-[6px] mb-[8px] mr-[4px]"
               onClick={() => {
+                handleFilter(item.id);
                 setDetailfilter(item.secondFilters);
-                setUseSearchParams({ ff: `${item.id}` });
+                handleFilterButton(isClick, setIsClick, i);
               }}
             >
               {item.name}
-            </button>
+            </FilterButton>
           ))}
         </ul>
 
@@ -122,7 +143,7 @@ export default function PageFilter() {
           <h1 className="flex">식물을 찾고있나요?</h1>
         </div>
 
-        <Button filter={filterList}></Button>
+        <FirstFilter filter={filterList}></FirstFilter>
 
         <div className="mt-[63px]">
           <div className="relative">
@@ -149,11 +170,11 @@ export default function PageFilter() {
         <div className="w-full flex justify-between text-[14px] font-bold">
           <div>식물데이터 {dummy.length} 종</div>
           <div className="flex">
-            <div className={`${!sort ? "" : "active"} `} onClick={changeColor}>
+            <div className={`${!sort ? "" : "active"} `} onClick={handleSort}>
               인기순
             </div>
             <span className="mx-[17px] h-[18px]">|</span>
-            <div className={`${sort ? "" : "active"}`} onClick={changeColor}>
+            <div className={`${sort ? "" : "active"}`} onClick={handleSort}>
               최신순
             </div>
           </div>
@@ -212,3 +233,28 @@ export default function PageFilter() {
     </>
   );
 }
+
+const FilterButton = styled.button`
+  color: ${(props) => (props.active ? "#00b564" : "#666")};
+  border: ${(props) => (props.active ? "1px solid #00b564" : "1px solid #aaa")};
+
+  display: inline-block;
+  --tw-border-opacity: 1;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+`;
+
+const Dash = styled.div`
+  border-style: dashed;
+  border-color: "#666";
+  border-width: 1px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+`;

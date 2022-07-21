@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route path="/plants" element={<PageFilter />} />
+          <Route path="/plants/" element={<PageFilter />} />
         </Routes>
         <Footer />
       </div>

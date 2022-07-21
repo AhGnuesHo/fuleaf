@@ -1,6 +1,6 @@
 [
     {
-        "id": "62abf69202b4dd10c1280adf",
+        "id": "leaf",
         "name": "잎을 감상하는",
         "secondFilters": [
             {
@@ -101,7 +101,7 @@
         ]
     },
     {
-        "id": "62abf69902b4dd10c1280ae6",
+        "id": "flower",
         "name": "꽃을 감상하는",
         "secondFilters": [
             {
@@ -202,7 +202,7 @@
         ]
     },
     {
-        "id": "62abf69e02b4dd10c1280aeb",
+        "id": "fruit",
         "name": "열매를 감상하는",
         "secondFilters": [
             {
@@ -303,7 +303,7 @@
         ]
     },
     {
-        "id": "62abf6ab02b4dd10c1280af4",
+        "id": "succulents",
         "name": "다육/선인장",
         "secondFilters": [
             {
