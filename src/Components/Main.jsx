@@ -25,7 +25,6 @@ export default function Main() {
     clickable: true,
     renderBullet: function (index, className) {
       return (
-        
         '<div class="menuWrap"><div class="' +
         className +
         '"></div><div class="menu">' +
@@ -60,7 +59,7 @@ export default function Main() {
             <Filter />
           </SwiperSlide>
           <SwiperSlide data-hash="#magazin">
-            <Magazin/>
+            <Magazin />
           </SwiperSlide>
         </Swiper>
       </div>

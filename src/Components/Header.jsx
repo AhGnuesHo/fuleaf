@@ -1,7 +1,24 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import links from "../Data/links.json";
 
 export default function Header() {
+  const [headerMenu, setHeaderMenu] = useState(links);
+
+  // useEffect(() => {
+  //   const currHref = window.location.pathname;
+  //   console.log(headerMenu);
+
+  //   setHeaderMenu(
+  //     headerMenu.header.forEach((item) => {
+  //       if (currHref === item.href) {
+  //         item.defaultStyle = "black";
+  //       }
+  //     })
+  //   );
+  //   console.log(headerMenu);
+  // }, [headerMenu]);
+
   return (
     <div className="bg-white sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto ">
@@ -16,7 +33,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex space-x-10 text-[15px] font-black ">
-            {links.header.map((link) => (
+            {headerMenu.header.map((link) => (
               <Link
                 to={link.href}
                 key={link.href}

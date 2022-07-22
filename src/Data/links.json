@@ -3,7 +3,7 @@
     {
       "href": "/",
       "text": "홈",
-      "defaultStyle": "black",
+      "defaultStyle": "#999",
       "header": true
     },
     {
