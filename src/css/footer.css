@@ -1,79 +1,153 @@
 footer.footer {
-    padding-top: 83px;
-    background-color: #000;
-    width: 100%;
-    height: 800px;
-    position : relative;
-  transform : translateY(-100%);
-    padding-top: 30px;
-    color: #fff;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    
+  padding-top: 83px;
+  background-color: #000;
+  width: 100%;
+  height: 800px;
+  position: relative;
+  transform: translateY(-100%);
+  padding-top: 30px;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 footer.footer .footer-layout {
-    width: 79%;
-    max-width: 1620px;
-    margin: 0 auto;
+  width: 79%;
+  max-width: 1620px;
+  margin: 0 auto;
 
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 
-    font: inherit;
-    vertical-align: baseline;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 footer.footer .footer-layout section.footer-top-section {
-    display: flex;
-    padding-bottom: 63px;
-    border-bottom: solid 0.75px #333;
+  display: flex;
+  padding-bottom: 63px;
+  border-bottom: solid 0.75px #333;
 }
 
 footer.footer .footer-layout section.footer-top-section .top-section-flex {
-    width: 50%;
-    border-bottom: none;
+  width: 50%;
+  border-bottom: none;
 }
 
-footer.footer .footer-layout section.footer-top-section .top-section-flex:first-child .logo-title-part a.footer-logo {
-    margin-bottom: 62.6px;
-    display : inline-block;
+footer.footer
+  .footer-layout
+  section.footer-top-section
+  .top-section-flex:first-child
+  .logo-title-part
+  a.footer-logo {
+  margin-bottom: 62.6px;
+  display: inline-block;
 }
 
 a {
-    text-decoration: none;
-    color: #000;
-    all: unset;
-    cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  all: unset;
+  cursor: pointer;
 }
 
-footer.footer .footer-layout section.footer-top-section .top-section-flex:first-child .logo-title-part a.footer-logo img.footer-logo-img {
-    width: 77.9px;
+footer.footer
+  .footer-layout
+  section.footer-top-section
+  .top-section-flex:first-child
+  .logo-title-part
+  a.footer-logo
+  img.footer-logo-img {
+  width: 77.9px;
 }
 
-footer.footer .footer-layout section.footer-top-section .top-section-flex:first-child .logo-title-part .footer-title-flex h1.footer-title {
-    font-size: 86px;
-    line-height: 1.4;
-    font-weight: bold;
-    letter-spacing: -0.6px;
+footer.footer
+  .footer-layout
+  section.footer-top-section
+  .top-section-flex:first-child
+  .logo-title-part
+  .footer-title-flex
+  h1.footer-title {
+  font-size: 86px;
+  line-height: 1.4;
+  font-weight: bold;
+  letter-spacing: -0.6px;
 }
 
-footer.footer .footer-layout section.footer-top-section .top-section-flex:nth-child(2) h1.top-section-title {
-    font-size: 86px;
-    font-weight: bold;
-    line-height: 1.4;
-    margin-bottom: 6px;
+footer.footer
+  .footer-layout
+  section.footer-top-section
+  .top-section-flex:nth-child(2)
+  h1.top-section-title {
+  font-size: 86px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 6px;
 }
 
-footer.footer .footer-layout section.footer-top-section .top-section-flex:nth-child(2) h2.top-section-subtitle {
-    margin-bottom: 109px;
-    font-size: 14px;
-    line-height: 1.33;
-    letter-spacing: -0.48px;
-    font-weight: normal;
+footer.footer
+  .footer-layout
+  section.footer-top-section
+  .top-section-flex:nth-child(2)
+  h2.top-section-subtitle {
+  margin-bottom: 109px;
+  font-size: 14px;
+  line-height: 1.33;
+  letter-spacing: -0.48px;
+  font-weight: normal;
+}
+
+.accordion-item {
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+  height: auto;
+  max-height: 9999px;
+}
+
+.accordion-item.collapsed {
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.accordion-title {
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5em 1.5em;
+  border: solid 1px #ccc;
+  border-radius: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+
+  &:hover,
+  &.open {
+    color: black;
+  }
+
+  &.open {
+    &::after {
+      content: "";
+      border-top: 0;
+      border-bottom: 5px solid;
+    }
+  }
+}
+
+.accordion-content {
+  padding: 1em 1.5em;
 }

@@ -185,7 +185,7 @@ export default function PageFilter() {
               {dummy && dummy.length > 0 ? (
                 dummy.slice(0, 25 * pageNum).map((item, index) => (
                   <div className="plants__list-item mr-[0px]" key={item.id}>
-                    <Link to={item.href}>
+                    <Link to={`/plants/${item.href}`}>
                       <img
                         alt="logo"
                         className="h-[170px] w-[170px] rounded-[10px] bg-cover bg-center mb-[12px]"

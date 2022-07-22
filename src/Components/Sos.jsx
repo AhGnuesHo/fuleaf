@@ -1,5 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
+
 export default function Sos() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="pb-[140px]">
       <h1 className="text-[16px] font-[400] tracking-normal text-[#00b654] mb-[5px]">
@@ -14,20 +18,26 @@ export default function Sos() {
             <SosTitle>
               <div className="w-[26px] font-[600] relative top-[-1px]">Q.</div>
               <H3>잎이 점점 떨어져요</H3>
-              <button className="ml-auto relative top-[2px]">
+              <button
+                className="ml-auto relative top-[2px]"
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <img
                   alt="arrow"
                   className="w-[15px] h-[15px]"
-                  src="https://huga.s3.ap-northeast-2.amazonaws.com/plantDetail/search_detail_sos_dropdown_arrow_down%402x.png"
+                  src={
+                    isOpen
+                      ? "https://huga.s3.ap-northeast-2.amazonaws.com/plantDetail/search_detail_sos_dropdown_arrow_down%402x.png"
+                      : "https://huga.s3.ap-northeast-2.amazonaws.com/plantDetail/search_detail_sos_dropdown_arrow_up%402x.png"
+                  }
                 />
               </button>
             </SosTitle>
             <SosDesc>
-              <DescContent>
-                칼라디움은 15℃ 이상의 따뜻한 온도에서 잎이 나와요. 온도가 춥다면
-                구근이 잠을 자는 시기가 됬을거에요. 통풍이 잘되고 따뜻한
-                실내에서 화분에 심긴채로 보관하거나 구근을 신문지로 싸서
-                보관해주세요.
+              <DescContent active={isOpen}>
+                15℃ 이상의 따뜻한 온도에서 잎이 나와요. 온도가 춥다면 구근이
+                잠을 자는 시기가 됬을거에요. 통풍이 잘되고 따뜻한 실내에서
+                화분에 심긴채로 보관하거나 구근을 신문지로 싸서 보관해주세요.
               </DescContent>
             </SosDesc>
           </li>
@@ -65,8 +75,8 @@ const SosDesc = styled.div`
 
 const DescContent = styled.h3`
   line-height: 1.64;
-  height: 0;
-  margin-top: 0px;
+  height: ${(props) => (props.active ? "22.9531px" : "0px")};
+  margin-top: ${(props) => (props.active ? "15px" : "0px")};
   overflow: hidden;
   transition: all 0.2s ease-in-out;
 `;
