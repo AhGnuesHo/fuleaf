@@ -9,7 +9,7 @@ export default function Magazin() {
           <div className="flex-1 w-[50%] mr-[4.7619vw] align-middle">
             <h2>
               <Link
-                to=""
+                to="/story"
                 className="whitespace-pre-wrap tracking-[-2.3px] leading-[1.43] font-black text-[2.7381vw]"
               >
                 물 주기, <br />

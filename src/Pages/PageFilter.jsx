@@ -1,13 +1,23 @@
 import filterList from "../Data/filter.json";
 import searchIcon from "../imges/search@3x.png";
 import data from "../Data/Data.json";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../../src/css/pageFilter.css";
-
 import styled from "styled-components";
-
+import queryString from "query-string";
 export default function PageFilter() {
+  const location = useLocation();
+  const decodeUri = decodeURI(location?.search);
+  const keword = queryString.parse(decodeUri);
+
+  useEffect(() => {
+    if (keword.term !== undefined) {
+      const newDummy = data.filter((item) => item.name.includes(keword.term));
+      setDummy(newDummy);
+    }
+  }, [keword.term]);
+
   const [sort, setSort] = useState(true);
   const [search, setSearch] = useState("");
   const [dummy, setDummy] = useState(data);
@@ -139,8 +149,15 @@ export default function PageFilter() {
     <>
       <div className="h-[100%] ml-[160px] mt-[42px] w-[79%] ">
         <div className="font-extrabold text-[32px] md:text-[46px]  mb-[36px]">
-          <h1 className="flex">어떤 종류의</h1>
-          <h1 className="flex">식물을 찾고있나요?</h1>
+          {search.length > 0 ? (
+            <h1 className="flex">
+              찾으시는 <br /> 식물이 맞나요?
+            </h1>
+          ) : (
+            <h1 className="flex">
+              어떤 종류의 <br /> 식물을 찾고있나요?
+            </h1>
+          )}
         </div>
 
         <FirstFilter filter={filterList}></FirstFilter>
@@ -159,9 +176,8 @@ export default function PageFilter() {
                 type="text"
                 placeholder="식물 이름을 검색해 주세요."
                 name="term"
-                value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value);
+                onKeyPress={(e) => {
+                  e.key === "Enter" && setSearch(e.target.value);
                 }}
               ></input>
             </form>

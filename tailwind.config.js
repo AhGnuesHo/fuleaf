@@ -12,8 +12,6 @@ module.exports = {
         "filterColor" : "#666666",
         "navDefaultColor" : "#B4B4B4"
       }
-
-
       
     },
     plugins: [],

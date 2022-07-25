@@ -1,5 +1,19 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
+const writerChannel = [
+  {
+    name: "인스타그램",
+    src: "https://www.instagram.com/kimpaca/",
+  },
+  {
+    name: "브런치",
+    src: "https://brunch.co.kr/@yueunkimmm",
+  },
+  {
+    name: "인스타그램",
+    src: "http://www.jammm.kr/",
+  },
+];
 export default function Stroy() {
   return (
     <div className="">
@@ -341,13 +355,30 @@ const Writer = () => {
                 플립 작가님
               </div>
             </div>
-            <div className="mb-[20px] text-[20px] font-[600] tracking-[-1px] leading-[1.5] text-[#666]">
+            <div className="mb-[20px] text-[20px] font-[500] tracking-[-1px] leading-[1.5] text-[#666]">
               식물과 책을 좋아하는 일러스트레이터 김파카입니다. 식물키트를
               만들고 그림작업을 하며 잼프로젝트라는 브랜드를 운영하고 있어요.
               식물과 잘 지낸지는 5년차이고, 작년에는 브런치북 대상을 받아 내
               방의 작은 식물은 언제나 나보다 큽니다 라는 식물에세이를
               출간했습니다.
             </div>
+            <ul className="flex">
+              {writerChannel.map((item) => (
+                <li className="mr-[20px] ">
+                  <Link
+                    to={item.src}
+                    className="text-[16px] tracking-[-0.8px] font-[700] text-[#00b564] underline"
+                  >
+                    {item.name}
+                    <img
+                      alt="arrow"
+                      className="relative inline top-[-4px] w-[9px]"
+                      src="https://huga.s3.ap-northeast-2.amazonaws.com/v3.1/images/magazine/8704%403x.png"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

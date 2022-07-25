@@ -1,11 +1,7 @@
-import Search from "./Search";
-import Filter from "./Filter";
-import Magazin from "./Magazin";
+import Search from "../Components/Search";
+import Filter from "../Components/Filter";
+import Magazin from "../Components/Magazin";
 import menu from "../Data/links.json";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "../css/Main.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,11 +12,6 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel } from "swiper";
 
 export default function Main() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -47,9 +38,6 @@ export default function Main() {
           className="mySwiper"
           hashNavigation={{
             watchState: true,
-          }}
-          onSlideChange={() => {
-            AOS.init();
           }}
         >
           <SwiperSlide data-hash="">

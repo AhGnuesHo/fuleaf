@@ -1,13 +1,14 @@
 import { useTypewriter } from "react-simple-typewriter";
 import { useState, useRef } from "react";
 import "../../src/css/Search.css";
-
+import { useRecoilState } from "recoil";
+import { searchTextState } from "../recoil/searchText";
 import arrow from "../imges/move-arrow.png";
 
 const placeholder = [" 스투키", " 몬스테라", ""];
 export default function Search() {
   const typer = useRef();
-  const [search, setSearch] = useState(false);
+  const [searchText, setSearchText] = useRecoilState(searchTextState);
 
   const TypewriterHook = () => {
     const [isInputFocus, setIsInputFocus] = useState(false);
@@ -37,8 +38,12 @@ export default function Search() {
           }
           placeholder={text}
           ref={typer}
-          onFocus={() => {
-            setSearch(true);
+          onKeyPress={(e) => {
+            console.log(e.key);
+            if (e.key === "Enter") {
+              setSearchText(e.target.value);
+              window.location.href = `/plants?term=${e.target.value}`;
+            }
           }}
         />
         <span className="blinkingCursor"></span>
@@ -55,20 +60,13 @@ export default function Search() {
 
         <>
           <div className="lnline">
-            {search ? "" : <span> 나는</span>}
+            <span> 나는</span>
             <TypewriterHook />를
           </div>
-          {search ? (
-            <>
-              <p>잘 키우는 방법</p>
-              <button className="searchLink">보러가기</button>
-            </>
-          ) : (
-            <>
-              <p className="inline">잘 키우는 방법이</p>
-              <p>궁금하다.</p>
-            </>
-          )}
+          <>
+            <p className="inline">잘 키우는 방법이</p>
+            <p>궁금하다.</p>
+          </>
         </>
 
         <img src={arrow} className="move-arrow" alt="arrow" />
