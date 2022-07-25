@@ -1,13 +1,39 @@
 .active {
- color : #ccc;
+  color: #ccc;
 }
 
-.plants__list-item {
-    width:calc(20% - 48px)
+@media (max-width: 1440px) {
+  .plants__list-item {
+    width: calc(20% - 48px);
+  }
 }
 
-.plants__list-item:not(:nth-child(5n)) {
-    margin-right:60px
+@media (max-width: 1440px) {
+  .plants__list-item:not(:nth-child(5n)) {
+    margin-right: 60px;
+  }
 }
 
+@media (max-width: 1200px) {
+  .plants__list-item {
+    width: calc(25% - 40px);
+  }
+}
 
+@media (max-width: 1200px) {
+  .plants__list-item:not(:nth-child(4n)) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .plants__list-item {
+    width: calc(33% - 40px);
+  }
+}
+
+@media (max-width: 900px) {
+  .plants__list-item:not(:nth-child(3n)) {
+    margin-right: 10px;
+  }
+}

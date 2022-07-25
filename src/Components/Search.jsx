@@ -1,14 +1,11 @@
 import { useTypewriter } from "react-simple-typewriter";
 import { useState, useRef } from "react";
 import "../../src/css/Search.css";
-import { useRecoilState } from "recoil";
-import { searchTextState } from "../recoil/searchText";
 import arrow from "../imges/move-arrow.png";
 
 const placeholder = [" 스투키", " 몬스테라", ""];
 export default function Search() {
   const typer = useRef();
-  const [searchText, setSearchText] = useRecoilState(searchTextState);
 
   const TypewriterHook = () => {
     const [isInputFocus, setIsInputFocus] = useState(false);
@@ -41,7 +38,6 @@ export default function Search() {
           onKeyPress={(e) => {
             console.log(e.key);
             if (e.key === "Enter") {
-              setSearchText(e.target.value);
               window.location.href = `/plants?term=${e.target.value}`;
             }
           }}

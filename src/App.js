@@ -6,12 +6,14 @@ import Detail from "./Pages/Detail";
 import Story from "./Pages/Story";
 import Modal from "./Components/Modal";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollTop";
 
 function App() {
   return (
     <>
       {/* <Modal></Modal> */}
       <BrowserRouter>
+        <ScrollToTop />
         <div className="h-[100%]">
           <Header />
           <Routes>

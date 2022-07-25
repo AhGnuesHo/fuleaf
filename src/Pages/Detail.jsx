@@ -14,7 +14,7 @@ export default function Detail() {
         <Search>
           <SearchSection>
             <form
-              action="/search"
+              action="/plants"
               method="get"
               style={{ opacity: "1", transform: "translateY(0px)" }}
             >
@@ -29,9 +29,6 @@ export default function Detail() {
                 <button
                   className="top-[5px] right-[5px] w-[50px] h-[50px] rounded-[50%] absolute bg-[#00b564] flex justify-center items-center cursor-pointer"
                   type="submit"
-                  onClick={() => {
-                    window.location.href = "/plants";
-                  }}
                 >
                   <img
                     className="w-[26px] h-[26px]"

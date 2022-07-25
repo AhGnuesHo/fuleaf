@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const searchTextState = atom({
-  key: "searchText",
-  default: "",
+export const itemState = atom({
+  key: "page",
+  default: 1,
 });

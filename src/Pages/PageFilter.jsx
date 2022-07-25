@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import "../../src/css/pageFilter.css";
 import styled from "styled-components";
 import queryString from "query-string";
+// import { useRecoilState } from "recoil";
+// import { itemState } from "../recoil/searchText";
 export default function PageFilter() {
   const location = useLocation();
   const decodeUri = decodeURI(location?.search);
@@ -18,6 +20,7 @@ export default function PageFilter() {
     }
   }, [keword.term]);
 
+  // const [pageNum, setPageNum] = useRecoilState(itemState);
   const [sort, setSort] = useState(true);
   const [search, setSearch] = useState("");
   const [dummy, setDummy] = useState(data);
@@ -147,9 +150,9 @@ export default function PageFilter() {
 
   return (
     <>
-      <div className="h-[100%] ml-[160px] mt-[42px] w-[79%] ">
+      <div className="h-[100%] mx-[auto] mt-[42px] md:w-[79%] w-[87.2%]">
         <div className="font-extrabold text-[32px] md:text-[46px]  mb-[36px]">
-          {search.length > 0 ? (
+          {search.length > 0 || keword.term ? (
             <h1 className="flex">
               찾으시는 <br /> 식물이 맞나요?
             </h1>
