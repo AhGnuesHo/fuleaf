@@ -6,8 +6,9 @@ import { Link, useLocation } from "react-router-dom";
 import "../../src/css/pageFilter.css";
 import styled from "styled-components";
 import queryString from "query-string";
-// import { useRecoilState } from "recoil";
-// import { itemState } from "../recoil/searchText";
+import { useRecoilState } from "recoil";
+import { itemState } from "../recoil/searchText";
+import Footer from "../Components/Footer";
 export default function PageFilter() {
   const location = useLocation();
   const decodeUri = decodeURI(location?.search);
@@ -20,11 +21,11 @@ export default function PageFilter() {
     }
   }, [keword.term]);
 
-  // const [pageNum, setPageNum] = useRecoilState(itemState);
+  const [pageNum, setPageNum] = useRecoilState(itemState);
   const [sort, setSort] = useState(true);
   const [search, setSearch] = useState("");
   const [dummy, setDummy] = useState(data);
-  const [pageNum, setPageNum] = useState(1);
+  // const [pageNum, setPageNum] = useState(1);
   const [detailfilter, setDetailfilter] = useState([]);
   const [thirddetailfilter, setThridDetailfilter] = useState([]);
   const [isClick, setIsClick] = useState([false, false, false, false]);
@@ -249,6 +250,7 @@ export default function PageFilter() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

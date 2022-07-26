@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
 const writerChannel = [
   {
     name: "인스타그램",
@@ -16,7 +17,7 @@ const writerChannel = [
 ];
 export default function Stroy() {
   return (
-    <div className="">
+    <>
       <div className="pt-[72.5px] bg-[#f8f8f8] ">
         <div className="w-[79%] mx-[auto] mb-[70px] pt-[14.5px] border-t-[1px] border-[#000] flex justify-between items-center">
           <div className="text-[16px] tracking-[-0.8px] text-[#333] font-[900]">
@@ -330,7 +331,8 @@ export default function Stroy() {
         </div>
       </div>
       <Writer />
-    </div>
+      <Footer />
+    </>
   );
 }
 const P = styled.p`

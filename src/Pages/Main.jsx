@@ -26,8 +26,8 @@ export default function Main() {
   };
 
   return (
-    <div className="h-screen">
-      <div className="h-full flex flex-col justify-evenly ">
+    <div className="h-screen top-[10px]">
+      <div className="h-full flex flex-col justify-evenly top-[20px]">
         <Swiper
           spaceBetween={90}
           direction={"vertical"}
