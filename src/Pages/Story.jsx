@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+
 const writerChannel = [
   {
     name: "인스타그램",

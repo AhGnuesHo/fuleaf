@@ -4,7 +4,7 @@ import { useState } from "react";
 import "animate.css";
 export default function Filter() {
   const [isActive, setIsActive] = useState([false, false, false, false]);
-  const [filterName, setFilterName] = useState("");
+
   return (
     <>
       <div id="filter" className=" mt-[200px] ml-[250px] ">
@@ -20,7 +20,6 @@ export default function Filter() {
                 const newArr = isActive.map((activeArr) => (activeArr = false));
                 newArr[index] = !isActive[index];
                 setIsActive(newArr);
-                setFilterName(item.id);
               }}
             >
               {item.name}
